@@ -16,13 +16,69 @@ body {
     margin: 10px 10px 0 10px; /* top, right, bottom, left */
     background-color: var(--theme-color);
     height: 60px;
-    /* [x-offset] [y-offset] [blur] [color] */
-    box-shadow: 0 0 10px #434343
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
 }
 .news {
-    margin: 10px 0 10px 10px;
-    background-color: var(--theme-color);
-    height: 40px;
+    background-color: white;
+    height: 60px;
     width: 75%;
-    box-shadow: 3px 3px 5px #434343, -3px -3px 5px #d6d4d4;
+}
+.iconrow {
+    background-color: white;
+    height: 60px;
+    width: 25%;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+.shop {
+    background-color: blue;
+    height: 60px;
+    width: 60px;
+}
+.home {
+    background-color: blue;
+    height: 60px;
+    width: 60px;
+}
+.settings {
+    background-color: blue;
+    height: 60px;
+    width: 60px;
+}
+.main {
+    margin: 10px 10px 0 10px;
+    background-color: var(--theme-color);
+    height: 400px;
+    display: flex;
+    gap: 10px;
+}
+.leftside {
+    background-color: white;
+    height: 380px;
+    width: 50px;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.number {
+    background-color: white;
+    height: 400px;
+    width: 100%;
+    display: flex;
+}
+.rightside {
+    background-color: white;
+    height: 380px;
+    width: 50px;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.lowbar {
+    margin: 10px;
+    background-color: var(--theme-color);
+    align-items: center;
+    height: 30px;
 }
