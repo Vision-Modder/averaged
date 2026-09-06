@@ -1,23 +1,28 @@
+:root {
+    --theme-color: #525fe8;
+    --radius-s: 4px;
+    --radius-m: 10px;
+    --radius-l: 20px;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
     display: flex;
     background-color: #e3e3e3;
+    flex-direction: column;
 }
 .topbar {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: #584f96;
-    width: 100%;
-    height: 10%;
+    margin: 10px 10px 0 10px; /* top, right, bottom, left */
+    background-color: var(--theme-color);
+    height: 60px;
+    /* [x-offset] [y-offset] [blur] [color] */
+    box-shadow: 0 0 10px #434343
 }
 .news {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #8d7cf7;
-    height: 100%;
+    margin: 10px 0 10px 10px;
+    background-color: var(--theme-color);
+    height: 40px;
     width: 75%;
+    box-shadow: 3px 3px 5px #434343, -3px -3px 5px #d6d4d4;
 }
