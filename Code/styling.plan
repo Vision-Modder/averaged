@@ -1,0 +1,34 @@
+# <u>Styling Plan</u>
+---
+### <u>Fonts</u>
+All fonts should be OFL licensed
+- **Latin**
+  - Simple & Glassmorphism
+    - Fredoka - Main
+    - Quicksand - Secondary
+    - Comfortaa - Tertiary
+  - Neon
+    - Orbitron - Main
+    - Jura - Secondary
+    - Tektur - Tertiary
+  - Pixel
+    - Press Start 2P - Main
+    - Handjet - Secondary
+    - Silkscreen - Tertiary
+- **Cyrillic**
+  - Simple & Glassmorphism
+    - Rubik - Main
+    - Nunito - Secondary
+    - Comfortaa - Tertiary
+  - Neon
+    - Tektur - Main
+    - Jura - Secondary
+    - Exo 2 - Tertiary
+  - Pixel
+    - Press Start 2P - Main
+    - Handjet - Secondary
+    - Pixelify Sans - Tertiary
+---
+### <u>SVGs</u>
+https://freesvgeditor.com/en/svg-editor-online
+https://www.svgrepo.com/
