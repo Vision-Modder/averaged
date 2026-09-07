@@ -16,6 +16,7 @@ body {
     margin: 10px 10px 0 10px; /* top, right, bottom, left */
     background-color: var(--theme-color);
     height: 60px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -24,13 +25,13 @@ body {
 .news {
     background-color: white;
     height: 60px;
-    width: 75%;
+    width: 125%;
+    flex: 1;
 }
 .iconrow {
     background-color: white;
     height: 60px;
-    width: 25%;
-    padding: 10px;
+    flex: 0 0 auto;
     display: flex;
     gap: 10px;
 }
@@ -53,26 +54,47 @@ body {
     margin: 10px 10px 0 10px;
     background-color: var(--theme-color);
     height: 400px;
+    flex: 1;
     display: flex;
     gap: 10px;
+    align-items: stretch;
 }
 .leftside {
     background-color: white;
-    height: 380px;
     width: 50px;
+    flex: 0 0 50px;
     justify-content: space-evenly;
     padding: 10px;
 }
 .number {
     background-color: white;
-    height: 400px;
     width: 100%;
     display: flex;
 }
+.globalnum {
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.add {
+    background-color: rgba(255, 0, 0, 0.163);
+    height: 100%;
+    width: 50%;
+    display: flex;
+    cursor: zoom-in;
+}
+.sub {
+    background-color: rgba(255, 0, 0, 0.163);
+    height: 100%;
+    width: 50%;
+    display: flex;
+    cursor: zoom-out;
+}
 .rightside {
     background-color: white;
-    height: 380px;
     width: 50px;
+    flex: 0 0 50px;
     justify-content: space-evenly;
     padding: 10px;
 }
@@ -81,4 +103,5 @@ body {
     background-color: var(--theme-color);
     align-items: center;
     height: 30px;
+    flex-shrink: 0;
 }
