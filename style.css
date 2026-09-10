@@ -1,8 +1,8 @@
 :root {
     --theme-color: #525fe8;
-    --radius-s: 4px;
-    --radius-m: 10px;
-    --radius-l: 20px;
+    --radius-s: 10px;
+    --radius-m: 30px;
+    --radius-l: 50px;
 }
 body {
     margin: 0;
@@ -19,40 +19,58 @@ body {
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    padding: 10px;
     gap: 10px;
+    padding: 10px;
+    border-radius: var(--radius-l);
 }
 .news {
     background-color: white;
     height: 60px;
     width: 125%;
     flex: 1;
+    border-radius: var(--radius-m);
 }
 .iconrow {
-    background-color: white;
+    background-color: rgb(14, 190, 213);
     height: 60px;
     flex: 0 0 auto;
     display: flex;
     gap: 10px;
+    border-radius: var(--radius-m);
 }
 .shop {
-    background-color: blue;
+    background-color: transparent;;
     height: 60px;
     width: 60px;
+    border-radius: var(--radius-l);
+}
+.shopsvg {
+    height: 100%;
+    width: 100%;
 }
 .home {
-    background-color: blue;
+    background-color: transparent;
     height: 60px;
     width: 60px;
+    border-radius: var(--radius-l);
+}
+.homesvg {
+    height: 100%;
+    width: 100%;
 }
 .settings {
-    background-color: blue;
+    background-color: transparent;;
     height: 60px;
     width: 60px;
+    border-radius: var(--radius-l);
+}
+.settingssvg {
+    height: 100%;
+    width: 100%;
 }
 .main {
     margin: 10px 10px 0 10px;
-    background-color: var(--theme-color);
+    background-color: transparent;
     height: 400px;
     flex: 1;
     display: flex;
@@ -65,11 +83,13 @@ body {
     flex: 0 0 50px;
     justify-content: space-evenly;
     padding: 10px;
+    border-radius: var(--radius-l);
 }
 .number {
-    background-color: transparent;
+    background-color: var(--theme-color);
     width: 100%;
     display: flex;
+    border-radius: var(--radius-l);
 }
 .globalnum {
     background-color: transparent;
@@ -77,6 +97,7 @@ body {
     width: 100%;
     display: flex;
     position: relative;
+    border-radius: var(--radius-l);
 }
 .numberdisplay {
     height: 100%;
@@ -113,6 +134,7 @@ body {
     flex: 0 0 50px;
     justify-content: space-evenly;
     padding: 10px;
+    border-radius: var(--radius-l);
 }
 .lowbar {
     margin: 10px;
@@ -120,4 +142,5 @@ body {
     align-items: center;
     height: 30px;
     flex-shrink: 0;
+    border-radius: var(--radius-l);
 }
