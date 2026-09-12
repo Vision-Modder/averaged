@@ -1,6 +1,16 @@
 let number = 0;
 let pendingChange = 0;
 let totalClicks = 0;
+let overlay = document.querySelector(".overlay");
+
+document.querySelector(".shop").addEventListener("click", () => {
+    overlay.style.display = "flex";
+});
+overlay.addEventListener("click", (event) => {
+    if (event.target === overlay) {
+        overlay.style.display = "none";
+  }
+});
 
 document.querySelector(".add").addEventListener("click", () => {
     number += 1;
