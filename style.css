@@ -22,6 +22,7 @@ body {
     gap: 10px;
     padding: 10px;
     border-radius: var(--radius-l);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
 }
 .news {
     background-color: white;
@@ -78,18 +79,20 @@ body {
     align-items: stretch;
 }
 .leftside {
-    background-color: white;
+    background-color: var(--theme-color);
     width: 50px;
     flex: 0 0 50px;
     justify-content: space-evenly;
     padding: 10px;
     border-radius: var(--radius-l);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
 }
 .number {
     background-color: var(--theme-color);
     width: 100%;
     display: flex;
     border-radius: var(--radius-l);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
 }
 .globalnum {
     background-color: transparent;
@@ -129,12 +132,13 @@ body {
     cursor: zoom-out;
 }
 .rightside {
-    background-color: white;
+    background-color: var(--theme-color);
     width: 50px;
     flex: 0 0 50px;
     justify-content: space-evenly;
     padding: 10px;
     border-radius: var(--radius-l);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
 }
 .lowbar {
     margin: 10px;
@@ -143,4 +147,34 @@ body {
     height: 30px;
     flex-shrink: 0;
     border-radius: var(--radius-l);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+    justify-content: space-evenly;
+}
+.totalclicks {
+    margin: 5px;
+    height: 30px;
+    width: 20%;
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    justify-content: center;
+    align-items: center;
+}
+.pendingchange {
+    margin: 5px;
+    height: 30px;
+    width: 20%;
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    justify-content: center;
+    align-items: center;
 }
