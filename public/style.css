@@ -167,6 +167,102 @@ body {
     border-radius: var(--radius-l);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
 }
+.leaderboard {
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.leaderboardsvg {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+.teams {
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.teamssvg {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+.history {
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.historysvg {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+.boosters {
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.boosterssvg {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+.achievements {
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.achievementssvg {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+.stats {
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.statssvg {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
 .number {
     background-color: var(--theme-color);
     width: 100%;
@@ -187,7 +283,7 @@ body {
     width: 100%;
     color: white;
     font-family: 'Fredoka', sans-serif;
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: bold;
     text-align: center;
     pointer-events: none;

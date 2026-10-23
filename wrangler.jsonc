@@ -4,5 +4,19 @@
   "compatibility_date": "2026-09-10",
   "assets": {
     "directory": "./public"
-  }
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "NUMBER_DO",
+        "class_name": "NumberObject"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["NumberObject"]
+    }
+  ]
 }
