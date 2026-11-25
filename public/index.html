@@ -28,11 +28,71 @@
             <button class="achievements"><img src="SVGs/trophy.svg" alt="achievements" class="achievementssvg"></button>
             <button class="stats"><img src="SVGs/circle-user-round.svg" alt="stats" class="statssvg"></button>
         </div>
+        <div class="leftsidepanel">
+            <div class="app-section" id="leaderboard">
+                <div class="title">Leaderboard</div>
+                <div class="leaderboard-filters">
+                    <button class="leaderboard-filters-player">Player</button>
+                    <button class="leaderboard-filters-team">Team</button>
+                </div>
+                <div class="leaderboard-list"></div>
+            </div>
+            <div class="app-section" id="history">
+                <div class="title">History</div>
+                <div class="history-filters">
+                    <button class="history-filters-number">Number</button>
+                    <button class="history-filters-playersjoined">Players Joined</button>
+                    <button class="history-filters-teamsmade">Teams Made</button>
+                </div>
+                <div class="history-main"></div>
+            </div>
+            <div class="app-section" id="boosters">
+                <div class="title">Boosters</div>
+                <div class="boosters-main"></div>
+            </div>
+            <div class="app-section" id="achievements">
+                <div class="title">Achievements</div>
+                <div class="achievements-main"></div>
+            </div>
+            <div class="app-section" id="stats">
+                <div class="title">Stats</div>
+            </div>
+        </div>
         <div class="number">
             <div class="globalnum">
-                <span class="numberdisplay">0.00000</span>
+                <span class="numberdisplay">number not available</span>
                 <div class="sub"></div>
                 <div class="add"></div>
+            </div>
+        </div>
+        <div class="rightsidepanel">
+            <div class="app-section" id="leaderboard">
+                <div class="title">Leaderboard</div>
+                <div class="leaderboard-filters">
+                    <button class="leaderboard-filters-player">Player</button>
+                    <button class="leaderboard-filters-team">Team</button>
+                </div>
+                <div class="leaderboard-list"></div>
+            </div>
+            <div class="app-section" id="history">
+                <div class="title">History</div>
+                <div class="history-filters">
+                    <button class="history-filters-number">Number</button>
+                    <button class="history-filters-playersjoined">Players Joined</button>
+                    <button class="history-filters-teamsmade">Teams Made</button>
+                </div>
+                <div class="history-main"></div>
+            </div>
+            <div class="app-section" id="boosters">
+                <div class="title">Boosters</div>
+                <div class="boosters-main"></div>
+            </div>
+            <div class="app-section" id="achievements">
+                <div class="title">Achievements</div>
+                <div class="achievements-main"></div>
+            </div>
+            <div class="app-section" id="stats">
+                <div class="title">Stats</div>
             </div>
         </div>
         <div class="rightside">
@@ -51,38 +111,57 @@
     <div class="overlay">
     <div class="shop-popup">
         <div class="shoptop">
-            <div class="shoptitle"></div>
+            <div class="shoptitle">Shop</div>
             <div class="shopfilter">
-                <div class="shopfilterpersonal"></div>
-                <div class="shopfilterteam"></div>
-                <div class="shopfilterglobal"></div>
-                <div class="shopfilterboost"></div>
-                <div class="shopfilteroffline"></div>
+                <button class="shopfilterpersonal">Personal</button>
+                <button class="shopfilterteam">Team</button>
+                <button class="shopfilterglobal">Global</button>
+                <button class="shopfilterboost">Boost</button>
+                <button class="shopfiltercosmetic">Cosmetic</button>
+                <button class="shopfilteroffline">Offline</button>
             </div>
         </div>
         <div class="shopmain">
-            <div class="shoplist-clickshow">
-                <img class="shoplist-clickshow-img">
-                <div class="shoplist-clickshow-title"></div>
-                <div class="shoplist-clickshow-description"></div>
-                <div class="shoplist-clickshow-filter"></div>
-                <div class="shoplist-clickshow-buy"></div>
+            
+        </div>
+    </div>
+    <div class="teams-popup">
+        <div class="teamstop">
+            <div class="teamstitle">Teams</div>
+            <div class="teamsactions">
+                <button class="teamsactionsjoin">Join a team</button>
+                <button class="teamsactionsleave">Leave current team</button>
+                <button class="teamsactionsinfo">Extra information about a team</button>
             </div>
-            <div class="shoplist-autoclick">
-                
+        </div>
+        <div class="teamsmain">
+            
+        </div>
+    </div>
+    <div class="home-popup">
+        <div class="hometop">
+            <div class="hometitle">Information</div>
+            <div class="homeactions">
+                <button class="homeactionscoffee">Buy me a coffee</button>
+                <button class="homeactionschannel">Go to Youtube Channel</button>
+                <button class="homeactionsbugreport">Bug report</button>
             </div>
-            <div class="shoplist-clickboost">
-                
+        </div>
+        <div class="homemain">
+            
+        </div>
+    </div>
+    <div class="settings-popup">
+        <div class="settingstop">
+            <div class="settingstitle">Settings</div>
+            <div class="settingsactions">
+                <button class="settingsactionsmute">Mute sounds</button>
+                <button class="settingsactionstheme">Change theme(light/dark)</button>
+                <button class="settingsactionsanimation">Toggle animations</button>
             </div>
-            <div class="shoplist-teammaker">
-                
-            </div>
-            <div class="shoplist-globalsurge">
-                
-            </div>
-            <div class="shoplist-newsbarmsg">
-                
-            </div>
+        </div>
+        <div class="settingsmain">
+            
         </div>
     </div>
 </div>

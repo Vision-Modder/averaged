@@ -4,6 +4,16 @@
     --radius-m: 30px;
     --radius-l: 50px;
 }
+.topbar,
+.dividor,
+.leftside,
+.leftsidepanel,
+.rightside,
+.rightsidepanel,
+.lowbar {
+  display: none;
+}
+/*LINE 44 CHANGE TO DISPLAY: FLEX*/
 body {
     margin: 0;
     min-height: 100vh;
@@ -31,7 +41,7 @@ body {
     background-color: var(--theme-color);
     height: 60px;
     flex-shrink: 0;
-    display: flex;
+    display: none;
     align-items: center;
     gap: 10px;
     padding: 10px;
@@ -71,15 +81,21 @@ body {
     width: 100%;
     pointer-events: none;
 }
+.settings-popup,
+.home-popup,
+.teams-popup,
 .shop-popup {
     width: calc(100% - 200px);
     height: calc(100% - 200px);
     background-color: var(--theme-color);
     border-radius: var(--radius-l);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
-    display: flex;
+    display: none;
     flex-direction: column;
 }
+.settingstop,
+.hometop,
+.teamstop,
 .shoptop {
     background-color: transparent;
     height: 80px;
@@ -88,31 +104,114 @@ body {
     gap: 10px;
     display: flex;
 }
+
+.settingstitle,
+.hometitle,
+.teamstitle,
 .shoptitle {
-    background-color: blue;
+    background-color: var(--theme-color);
     width: 30%;
     border-radius: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
 }
+.settingsactions,
+.homeactions,
+.teamsactions,
 .shopfilter {
-    height: 80px;
-    background-color: blue;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    height: 60px;
+    background-color: var(--theme-color);
     flex: 1;
     display: flex;
     border-radius: 80px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+    justify-content: space-evenly;
+    
+}
+.settingsactionsanimation,
+.settingsactionsmute,
+.settingsactionstheme,
+.homeactionscoffee,
+.homeactionschannel,
+.homeactionsbugreport,
+.teamsactionsjoin,
+.teamsactionsleave,
+.teamsactionsinfo,
+.shopfilterpersonal,
+.shopfilterteam,
+.shopfilterglobal,
+.shopfilterboost,
+.shopfiltercosmetic,
+.shopfilteroffline {
+    all: unset;
+    border-radius: 100px;
+    background-color: var(--theme-color);
+    margin-left: 10px;
+    flex: 1;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka', sans-serif;
+    font-size: auto;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
 }
+.settingsmain,
+.homemain,
+.teamsmain,
 .shopmain {
     height: calc(80% - 20px);
-    width: calc(100% - 20px);
+    width: calc(100% - 30px);
     flex: 1;
     margin: 0 10px 10px 10px;
-    background-color: blue;
-    display: flex;
+    background-color: var(--theme-color);
+    display: grid;
+    padding: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
     border-radius: calc(var(--radius-l) - 10px);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
     overflow-y: auto;
     scrollbar-width: none;
+    flex-direction: column;
+}
+.shopcard {
+    height: auto;
+    width: auto;
+    margin: 5px;
+    background-color: var(--theme-color);
+    border-radius: calc(var(--radius-l) - 10px);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+    flex-direction: column;
+    display: flex;
+    container-type: inline-size;
+}
+.shopcard-name {
+    height: 10px;
+    width: 100%;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+}
+.shopcard-desc {
+    flex: 1;
+    font-family: 'Fredoka', sans-serif;
+    color: gray;
+}
+.shopcard-price {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
 }
 .shopmain::-webkit-scrollbar {
     display: none;
@@ -166,6 +265,17 @@ body {
     padding: 10px;
     border-radius: var(--radius-l);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+}
+.leftsidepanel {
+    margin-right: -10px;
+    background-color: var(--theme-color);
+    width: 0px;
+    flex: 0 0 0px;
+    justify-content: space-evenly;
+    padding: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
 }
 .leaderboard {
     background-color: transparent;
@@ -269,6 +379,7 @@ body {
     display: flex;
     border-radius: var(--radius-l);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
 }
 .globalnum {
     background-color: transparent;
@@ -315,6 +426,36 @@ body {
     padding: 10px;
     border-radius: var(--radius-l);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+}
+.rightsidepanel {
+    margin-left: -10px;
+    background-color: var(--theme-color);
+    width: 0px;
+    flex: 0 0 0px;
+    justify-content: space-evenly;
+    padding: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+.app-section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.title {
+    height: 80px;
+    width: 100%;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: var(--theme-color);
+    border-radius: var(--radius-l);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
 }
 .lowbar {
     margin: 10px;
