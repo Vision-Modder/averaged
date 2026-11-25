@@ -7,11 +7,11 @@ setInterval(async () => {
     });
     pendingChange = 0;
     let data = await response.json();
-    document.querySelector(".numberdisplay").textContent = data.number.toFixed(10);
+    document.querySelector(".numberdisplay").textContent = data.number.toFixed(5);
   }
 }, 1000);
 setInterval(async () => {
   let response = await fetch("/number");
   let data = await response.json();
-  document.querySelector(".numberdisplay").textContent = data.number.toFixed(10);
+  document.querySelector(".numberdisplay").textContent = data.number.toFixed(5);
 }, 1000);

@@ -217,7 +217,7 @@ document.querySelectorAll(".rightside button").forEach(btn => {
 const numberDisplayEl = document.querySelector(".numberdisplay");
 const pendingChangeEl = document.querySelector(".pendingchange");
 
-const smooth = 100;
+const smooth = 25;
 let startNumber = 0;
 let targetNumber = 0;
 let currentNumber = 0;
