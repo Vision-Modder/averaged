@@ -299,9 +299,22 @@ setInterval(() => {
   }
 }, 15);
 
-// Poll the shared server number every 2 seconds
 fetchSharedNumber();
-setInterval(fetchSharedNumber, 2000);
+setInterval(flushPendingChange, 1000);
 
-// Flush queued clicks to the server every 20 seconds
-setInterval(flushPendingChange, 20000);
+function connectWebSocket() {
+  const protocol = location.protocol === "https:" ? "wss:" : "ws:";
+  const socket = new WebSocket(`${protocol}//${location.host}/ws`);
+
+  socket.addEventListener("message", (event) => {
+    const data = JSON.parse(event.data);
+    if (typeof data.number === "number") {
+      setServerTarget(data.number);
+    }
+  });
+
+  socket.addEventListener("close", () => {
+    setTimeout(connectWebSocket, 1000);
+  });
+}
+connectWebSocket();
