@@ -249,6 +249,7 @@ function setServerTarget(nextServerNumber) {
   targetNumber = numeric;
   step = 0;
   isInterpolating = true;
+  console.log("New target:", numeric, "from current:", currentNumber);
 }
 
 async function fetchSharedNumber() {
