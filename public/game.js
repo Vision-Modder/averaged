@@ -213,3 +213,94 @@ document.querySelectorAll(".rightside button").forEach(btn => {
         }
     });
 });
+
+const numberDisplayEl = document.querySelector(".numberdisplay");
+const pendingChangeEl = document.querySelector(".pendingchange");
+
+const smooth = 100;
+let startNumber = 0;
+let targetNumber = 0;
+let currentNumber = 0;
+let step = 0;
+let hasReceivedServerValue = false;
+let isInterpolating = false;
+
+function setServerTarget(nextServerNumber) {
+  const numeric = Number(nextServerNumber);
+  if (Number.isNaN(numeric)) return;
+
+  if (!hasReceivedServerValue) {
+    hasReceivedServerValue = true;
+    startNumber = numeric;
+    targetNumber = numeric;
+    currentNumber = numeric;
+    step = smooth;
+    isInterpolating = false;
+    if (numberDisplayEl) {
+      numberDisplayEl.textContent = currentNumber.toFixed(5);
+    }
+    return;
+  }
+
+  if (numeric === targetNumber) return;
+
+  // Start smoothing from wherever the display currently is so there's no snap
+  startNumber = currentNumber;
+  targetNumber = numeric;
+  step = 0;
+  isInterpolating = true;
+}
+
+async function fetchSharedNumber() {
+  try {
+    const res = await fetch("/number", { cache: "no-store" });
+    if (!res.ok) return;
+    const data = await res.json();
+    setServerTarget(data.number);
+  } catch (err) {
+    console.error("Failed to fetch /number:", err);
+  }
+}
+
+async function flushPendingChange() {
+  if (pendingChange === 0) return;
+  const deltaToSend = pendingChange;
+  pendingChange = 0;
+  if (pendingChangeEl) {
+    pendingChangeEl.textContent = pendingChange.toFixed(0);
+  }
+
+  try {
+    const res = await fetch("/number", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ change: deltaToSend })
+    });
+    if (!res.ok) return;
+    const data = await res.json();
+    setServerTarget(data.number);
+  } catch (err) {
+    console.error("Failed to post change:", err);
+  }
+}
+
+// 100-step client-side smoothing loop
+setInterval(() => {
+  if (!isInterpolating || !numberDisplayEl) return;
+
+  step += 1;
+  const value = startNumber + ((targetNumber - startNumber) / smooth) * step;
+  currentNumber = step >= smooth ? targetNumber : value;
+  numberDisplayEl.textContent = currentNumber.toFixed(5);
+
+  if (step >= smooth) {
+    isInterpolating = false;
+  }
+}, 15);
+
+// Poll the shared server number every 2 seconds
+fetchSharedNumber();
+setInterval(fetchSharedNumber, 2000);
+
+// Flush queued clicks to the server every 20 seconds
+setInterval(flushPendingChange, 20000);
