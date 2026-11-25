@@ -4,6 +4,17 @@ export class NumberObject extends DurableObject {
   constructor(ctx, env) {
     super(ctx, env);
     this.sockets = new Set();
+    this.startBotLoop();
+  }
+
+  startBotLoop() {
+  if (this.botTimer) return;
+  this.botTimer = setInterval(async () => {
+    if (!this.sockets || this.sockets.size === 0) return;
+    const delta = (Math.random() * 4 - 2);
+    const rounded = await this.addChange(Number(delta.toFixed(4)));
+    this.broadcastNumber(rounded);
+  }, 2000);
   }
 
   broadcastNumber(number) {
