@@ -144,9 +144,29 @@ export class NumberObject extends DurableObject {
     if (this.botTimer) return;
     this.botTimer = setInterval(async () => {
       if (!this.sockets || this.sockets.size === 0) return;
-      const delta = Math.random() * 4 - 2;
-      await this.addChange(Number(delta.toFixed(4)));
-    }, BOT_TICK_MS);
+
+      let totalSum = toSafeNumber(await this.ctx.storage.get("totalSum"), 0);
+      let totalCount = toSafeNumber(await this.ctx.storage.get("totalCount"), 1);
+      const currentAvg = totalCount === 0 ? 0 : totalSum / totalCount;
+
+      // 4 ticks/sec * up to ±12.5 per tick = up to ±50 swing in 1 second
+      const desiredShift = Math.random() * 25 - 12.5;
+      const targetAvg = currentAvg + desiredShift;
+
+      // Scale the added value by totalCount so the true average actually moves by desiredShift
+      const weightedEntry = targetAvg * (totalCount + 1) - totalSum;
+
+      totalSum += weightedEntry;
+      totalCount += 1;
+
+      await this.ctx.storage.put("totalSum", totalSum);
+      await this.ctx.storage.put("totalCount", totalCount);
+
+      const rounded = Number((totalSum / totalCount).toFixed(5));
+      this.latestNumber = rounded;
+      this.broadcastNumber(rounded);
+      this.maybeSaveHourly(rounded, { snapshotHistory: true });
+    }, 250);
   }
 
   broadcastNumber(number) {
